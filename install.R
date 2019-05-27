@@ -14,7 +14,7 @@ if(BiocManager::version() != "3.9"){
                          update=TRUE, ask=FALSE)
 }
 
-builtins <- c("Matrix", "KernSmooth", "mgcv", "scMerge", "scater")
+builtins <- c("scMerge", "scater")
 
 for (builtin in builtins)
     if (!suppressWarnings(require(builtin, character.only=TRUE)))
