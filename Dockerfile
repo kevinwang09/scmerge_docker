@@ -4,15 +4,12 @@
 
 # The suggested name for this image is: bioconductor/release_base.
 
-FROM bioconductor/release_core2
+FROM bioconductor/bioconductor_docker@sha256:79ede9666fc3c42235218b6e64b2a9fb5d5514e9368bc5402ba7896d55d47ab3
 
 # FIXME? in release, default CRAN mirror is set to rstudio....should it be fhcrc?
 
 MAINTAINER kevin.wang@sydney.edu.au
 
 ADD install.R /tmp/
-
-# invalidates cache every 24 hours
-ADD http://master.bioconductor.org/todays-date /tmp/
 
 RUN R -f /tmp/install.R
