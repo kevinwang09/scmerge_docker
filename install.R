@@ -14,7 +14,7 @@ if(BiocManager::version() != "3.11"){
                          update=TRUE, ask=FALSE)
 }
 
-builtins <- c("igraph", "scMerge", "scater")
+builtins <- c("SydneyBioX/scMerge")
 
 for (builtin in builtins)
     if (!suppressWarnings(require(builtin, character.only=TRUE)))
