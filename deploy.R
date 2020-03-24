@@ -23,5 +23,5 @@ vm1 = gce_ssh_setup(vm1,
                     key.private = "~/.ssh/id_rsa")
 
 gce_push_registry(vm1,
-                  save_name = "seg:melanoma",
+                  save_name = "scmerge_docker:builder",
                   container_name = "rstudio")

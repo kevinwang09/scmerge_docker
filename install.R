@@ -14,7 +14,7 @@ if(BiocManager::version() != "3.11"){
                          update=TRUE, ask=FALSE)
 }
 
-builtins <- c("SydneyBioX/scMerge")
+builtins <- c("SydneyBioX/scMerge", "knitr", "rmarkdown", "BiocStyle", "scater", "qpdf")
 
 for (builtin in builtins)
     if (!suppressWarnings(require(builtin, character.only=TRUE)))
