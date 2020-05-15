@@ -9,15 +9,17 @@ install.packages("BiocManager", repos="https://cran.rstudio.com")
 #devtools::install_github("Bioconductor/BiocManager")
 library(BiocManager)
 
-if(BiocManager::version() != "3.11"){
-    BiocManager::install(version="3.11",
+bioc_version = "3.12"
+
+if(BiocManager::version() != bioc_version){
+    BiocManager::install(version=bioc_version,
                          update=TRUE, ask=FALSE)
 }
 
 builtins <- c("SydneyBioX/scMerge", "knitr", "rmarkdown", "BiocStyle", "scater", "qpdf")
 
-for (builtin in builtins)
+for (builtin in builtins){
     if (!suppressWarnings(require(builtin, character.only=TRUE)))
         suppressWarnings(BiocManager::install(builtin,
-                                              version="3.11",
-                                              update=TRUE, ask=FALSE))
+                                              version=bioc_version,
+                                              update=TRUE, ask=FALSE))}

@@ -12,7 +12,7 @@ gce_global_zone("us-central1-a")
 vm1 <- gce_vm(template = "rstudio",
               name = "scmerge",
               disk_size_gb = 50,
-              predefined_type = "n1-standard-2",
+              predefined_type = "n1-standard-4",
               dynamic_image = tag,
               user = "rstudio",
               password = Sys.getenv("DOCKER_PWD"))
