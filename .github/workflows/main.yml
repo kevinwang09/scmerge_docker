@@ -1,10 +1,21 @@
-on: [push]
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '*'
+  pull_request:
 
 jobs:
-  docker_action:
+  build:
+    name: build
     runs-on: ubuntu-latest
     name: Building Docker for scMerge
     steps:
+    - uses: actions/checkout@v2
+    
     - name: build and push image
       uses: docker/build-push-action@v1.1.0
       with:
