@@ -1,6 +1,16 @@
-# action.yml
-name: 'Test-Docker'
-description: 'Testing GHA with Docker'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+on: [push]
+
+jobs:
+  docker_action:
+    runs-on: ubuntu-latest
+    name: Building Docker for scMerge
+    steps:
+    - name: build and push image
+      uses: docker/build-push-action@v1.1.0
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: kevinwang09/scmerge
+        dockerfile: Dockerfile
+        always_pull: true
+        tags: latest
