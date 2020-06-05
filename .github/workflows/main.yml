@@ -1,0 +1,10 @@
+on: [push]
+
+jobs:
+  docker_action:
+    runs-on: ubuntu-latest
+    name: Building Docker for scMerge
+    steps:
+    - name: Docker action
+      id: docker
+      uses: kevinwang09/scmerge_docker@v1
