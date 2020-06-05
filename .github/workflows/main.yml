@@ -8,3 +8,10 @@ jobs:
     - name: Docker action
       id: docker
       uses: kevinwang09/scmerge_docker@v1
+  
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: kevinwang09/scmerge
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
