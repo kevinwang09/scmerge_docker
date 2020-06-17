@@ -1,6 +1,0 @@
-# action.yml
-name: 'Test-Docker'
-description: 'Testing GHA with Docker'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
