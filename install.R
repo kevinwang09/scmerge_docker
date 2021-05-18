@@ -3,7 +3,7 @@ if ("BiocManager" %in% rownames(installed.packages()))
 
 install.packages("BiocManager", repos="https://cran.rstudio.com")
 library(BiocManager)
-bioc_version = "3.12"
+bioc_version = "release"
 if(BiocManager::version() != bioc_version){
     BiocManager::install(version=bioc_version,
                          update=TRUE, ask=FALSE)
